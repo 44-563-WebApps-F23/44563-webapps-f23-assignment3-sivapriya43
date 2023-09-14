@@ -25,7 +25,7 @@
             </ol>
         </li>
         <li>
-            Capture the pictures
+            Capturing the pictures
         </li>
         <li>
             Attend adventurte events conducted according to place
@@ -86,13 +86,22 @@
     <hr></hr>
     <h3>Coding Heading</h3>
     <blockquote>Automatic Copyright Year - Using PHP</blockquote>
-    <a href="https://stackoverflow.com/questions/61050683/automatic-copyright-year-using-php"> Link </a>
-    
+    <a href="https://stackoverflow.com/questions/61050683/automatic-copyright-year-using-php">stackoverflow Link </a>
+
     <pre>
 
-        &copy; &lt;?php echo date("Y"); ?&gt;
+        <?php function auto_copyright($year = 'auto'){ ?>
+            <?php if(intval($year) == 'auto'){ $year = date('Y'); } ?>
+            <?php if(intval($year) == date('Y')){ echo intval($year); } ?>
+            <?php if(intval($year) < date('Y')){ echo intval($year) . ' - ' . date('Y'); } ?>
+            <?php if(intval($year) > date('Y')){ echo date('Y'); } ?>
+         <?php } ?>
 
 
     </pre>
+
+    <a href="https://css-tricks.com/snippets/php/automatic-copyright-year/">
+Source link 
+    </a>
 </body>
 </html>
