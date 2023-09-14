@@ -85,22 +85,22 @@
 
     <hr></hr>
     <h3>Coding Heading</h3>
-    <blockquote>Automatic Copyright Year - Using PHP</blockquote>
-    <a href="https://stackoverflow.com/questions/61050683/automatic-copyright-year-using-php">stackoverflow Link </a>
+    <blockquote>Get Users IP Address- Using PHP</blockquote>
+    <a href="https://stackoverflow.com/search?q=Get+Users+IP+Address&s=26c5377e-11c7-4856-9469-b2ba93f27aa2">stackoverflow Link </a>
 
     <pre>
 
-        <?php function auto_copyright($year = 'auto'){ ?>
-            <?php if(intval($year) == 'auto'){ $year = date('Y'); } ?>
-            <?php if(intval($year) == date('Y')){ echo intval($year); } ?>
-            <?php if(intval($year) < date('Y')){ echo intval($year) . ' - ' . date('Y'); } ?>
-            <?php if(intval($year) > date('Y')){ echo date('Y'); } ?>
-         <?php } ?>
-
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip=$_SERVER['HTTP_CLIENT_IP'];
+       } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+       } else {
+            $ip=$_SERVER['REMOTE_ADDR'];
+       }
 
     </pre>
 
-    <a href="https://css-tricks.com/snippets/php/automatic-copyright-year/">
+    <a href="https://css-tricks.com/snippets/php/get-users-ip-address/">
 Source link 
     </a>
 </body>
